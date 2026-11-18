@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Linkloom is a calm, quick QR code maker for links, menus, playlists, and more."
+    />
+    <title>Linkloom — Make a QR code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Linkloom home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>linkloom</span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> free, fast &amp; private</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">QR code maker <span>✦</span></p>
+            <h1>Turn a link into<br /><em>a little moment.</em></h1>
+            <p class="hero-text">
+              A simple, beautifully quiet way to share anything worth opening.
+              No sign-up, no tracking, no fuss.
+            </p>
+          </div>
+          <div class="hero-sticker" aria-hidden="true">
+            <span>scan<br />me</span>
+            <svg viewBox="0 0 90 90" role="presentation">
+              <path d="M5 45C18 23 31 16 45 15c17-1 29 10 40 30-12 21-25 30-40 30C30 75 17 66 5 45Z" />
+              <circle cx="45" cy="45" r="13" />
+              <circle cx="45" cy="45" r="4" />
+            </svg>
+          </div>
+        </section>
+
+        <section class="workspace" aria-label="QR code generator">
+          <div class="form-panel">
+            <div class="panel-heading">
+              <span class="step-number">01</span>
+              <div>
+                <h2>What are we sharing?</h2>
+                <p>Paste a URL below. We’ll take care of the rest.</p>
+              </div>
+            </div>
+
+            <form id="qr-form">
+              <label for="url-input">Your link</label>
+              <div class="input-wrap">
+                <span class="input-icon" aria-hidden="true">↗</span>
+                <input
+                  id="url-input"
+                  name="url"
+                  type="text"
+                  inputmode="url"
+                  placeholder="https://your-link.com"
+                  autocomplete="url"
+                  required
+                />
+                <button class="clear-button" id="clear-button" type="button" aria-label="Clear link">×</button>
+              </div>
+              <p class="field-message" id="field-message" role="alert"></p>
+
+              <div class="suggestions">
+                <span>Try one:</span>
+                <button type="button" data-example="https://www.youtube.com/watch?v=dQw4w9WgXcQ">playlist</button>
+                <button type="button" data-example="https://maps.google.com">place</button>
+                <button type="button" data-example="https://example.com/menu">menu</button>
+              </div>
+
+              <div class="form-footer">
+                <p><span class="lock">⌑</span> Nothing leaves your browser.</p>
+                <button class="primary-button" type="submit">
+                  <span>Generate code</span>
+                  <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="preview-panel">
+            <div class="preview-header">
+              <div>
+                <span class="step-number">02</span>
+                <h2>Your code</h2>
+              </div>
+              <span class="live-label"><span class="status-dot"></span> live preview</span>
+            </div>
+            <div class="qr-stage">
+              <div class="corner corner-tl"></div>
+              <div class="corner corner-tr"></div>
+              <div class="corner corner-bl"></div>
+              <div class="corner corner-br"></div>
+              <div id="qr-output" class="qr-output" aria-live="polite">
+                <div class="empty-qr">
+                  <div class="empty-icon">✦</div>
+                  <p>Your QR code<br />will appear here</p>
+                </div>
+              </div>
+            </div>
+            <div class="preview-footer">
+              <p id="preview-caption">Waiting for a link to weave its way in.</p>
+              <button id="download-button" class="download-button" type="button" disabled>
+                <span aria-hidden="true">↓</span> Download PNG
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="feature-row" aria-label="Linkloom features">
+          <div class="feature">
+            <span class="feature-number">01</span>
+            <div><strong>Made for sharing</strong><p>Posters, tables, bios, and beyond.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature-number">02</span>
+            <div><strong>Always crisp</strong><p>Clean codes that scan first time.</p></div>
+          </div>
+          <div class="feature">
+            <span class="feature-number">03</span>
+            <div><strong>Yours alone</strong><p>No links saved. Ever.</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© 2025 linkloom</span>
+        <span>made for the curious <span class="footer-star">✳</span></span>
+      </footer>
+    </div>
+  </body>
+</html>
